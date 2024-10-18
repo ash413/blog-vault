@@ -10,9 +10,9 @@ router.post('/newBlog', (req, res) => {
 })
 
 router.get('/existingBlog', (req, res) => {
-    title: req.body.title;
-    author: req.body.author;
-    content: req.body.content
+    title: req.params.title;
+    author: req.params.author;
+    content: req.params.content
 })
 
 

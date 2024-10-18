@@ -17,8 +17,8 @@ const BlogSchema = new mongoose.Schema({
     content: String
 });
 
-const Users = mongoose.model('UserSchema');
-const Blogs = mongoose.model('BlogSchema');
+const Users = mongoose.model('Users', UserSchema);
+const Blogs = mongoose.model('Blogs', BlogSchema);
 
 
 /*const connection = mongoose.connect(db_url, {

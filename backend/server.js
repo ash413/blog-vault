@@ -1,10 +1,15 @@
 const express = require('express');
-const connectDB = require('./config/db');
+const bodyParser = require('body-parser');
+/*const connectDB = require('./config/db');*/
 
 const app = express();
 
-app.use(express.json())
+const userRoutes = require('./routes/userRoutes');
+const blogRoutes = require('./routes/blogRoutes');
 
+/*app.use(express.json())*/
+app.use(bodyParser.json())
+app.use("/user", userRoutes);
 
 
 const PORT = process.env.port || 5000
