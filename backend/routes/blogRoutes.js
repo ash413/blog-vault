@@ -33,7 +33,7 @@ router.get('/allBlogs', async (req, res) => {
     }
 })
 
-router.get('/existingBlogs/:title', async(req, res){
+router.get('/existingBlogs/:title', async(req, res) => {
     const title = req.params.title;
     try {
         const blogs = await Blogs.findOne({ title });
