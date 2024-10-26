@@ -1,5 +1,5 @@
 const express = require('express');
-const Blogs = require('../middlewares/blogs');
+const {Blogs} = require('../middlewares/blogs');
 const AuthMiddleware = require('../middlewares/auth');
 
 const router = express.Router();
@@ -37,8 +37,8 @@ router.get('/existingBlogs/:title', async(req, res) => {
     const title = req.params.title;
     try {
         const blogs = await Blogs.findOne({ title });
-        if (blog){
-            res.status(200).json(blog)
+        if(blogs){
+            res.status(200).json(blogs)
         } else{
             res.status(404).json({
                 msg: "Blog not found!"

@@ -1,4 +1,4 @@
-const Blogs = require('../db/db');
+const {Blogs} = require('../db/db');
 
 const BlogMiddleware = (req, res, next) => {
     const title = req.params.title;
@@ -9,12 +9,12 @@ const BlogMiddleware = (req, res, next) => {
         if(value){
             next();
         } else{
-            res.status(403).json({
+            return res.status(403).json({
                 msg: "Blog not found!"
             });
         }
     }).catch(err => {
-        res.json(500).json({
+        return res.status(500).json({
             msg: "Server error!!"
         });
     })

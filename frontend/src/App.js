@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Login from './pages/Login';
 import Blogs from './components/Blogs';
 import Features from './components/Features';
-import Main from './components/Main';
+//import Main from './components/Main';
 
 
 function App(){
@@ -15,7 +15,7 @@ function App(){
             <div className=''>
                 <Navbar isLoggedIn={isLoggedIn}/>
                 <Routes>
-                    <Route path='/' element={Main} />
+                    <Route path='/' element={Login} />
                     <Route path='/features' element={Features} />
                     <Route path='/signIn' element={<Login setIsLoggedIn={setIsLoggedIn}/>} />
                     {isLoggedIn && <Route path='/blogs' element={Blogs} />}

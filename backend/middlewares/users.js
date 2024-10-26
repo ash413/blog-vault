@@ -1,4 +1,4 @@
-const Users = require('../db/db');
+const { Users } = require('../db/db');
 
 const UserMiddleware = (req, res, next) => {
     const username = req.headers.username;
@@ -12,12 +12,12 @@ const UserMiddleware = (req, res, next) => {
         if(value){
             next();
         } else{
-            res.status(403).json({
+            return res.status(403).json({
                 msg: "User doesn't exist!"
             })
         }
     }).catch(err => {
-        res.json(500).json({
+        return res.status(500).json({
             msg: "Server error!!"
         });
     })

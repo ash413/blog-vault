@@ -14,4 +14,4 @@ router.post('/login', UserMiddleware, (req, res) => {
     });
 })
 
-model.exports = router;
+module.exports = router;
